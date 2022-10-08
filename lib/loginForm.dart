@@ -11,14 +11,27 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[300],
+      backgroundColor: Color(0xFF100f1f),
       body: SafeArea(
         child: Center(
-          child: Column(children: [
-            Text("tadadawdawe",
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Image.asset('assets/images/shawtypizza.png',
+            height:200,
+            width:200,
+            ),
+            SizedBox(height: 10),
+            Text("LOGIN",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
+                  color: Colors.white,
                   fontSize: 24,
+                )),
+            SizedBox(height: 10),
+
+            Text("Please sign-in to continue.",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 12,
                 )),
             SizedBox(height: 20),
 
@@ -27,15 +40,17 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.red[200],
-                  border: Border.all(color: Colors.white),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
+                  padding: const EdgeInsets.only(left: 0.0),
                   child: TextField(
                     decoration: InputDecoration(
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      prefixIcon: Icon(Icons.email),
                       hintText: 'Email',
                     ),
                   ),
@@ -49,22 +64,24 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.red[200],
-                  border: Border.all(color: Colors.white),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
+                  padding: const EdgeInsets.only(left: 0.0),
                   child: TextField(
-                    obscureText: true,
                     decoration: InputDecoration(
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      prefixIcon: Icon(Icons.lock),
                       hintText: 'Password',
                     ),
                   ),
                 ),
               ),
             ),
+
             SizedBox(height: 30),
             //login button
             Padding(
@@ -72,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Container(
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 94, 7, 255),
+                  color: Color(0xFFff4f4f),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Center(
@@ -94,15 +111,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text(
                   "Not a member?",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    //fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                  ),
-                   Text(
-                     " Register now", 
-                     style: TextStyle(
-                       color: Colors.red, 
-                       fontWeight: FontWeight.bold
-                       )),
+                ),
+                Text(" Register now",
+                    style: TextStyle(
+                        color: Color(0xFF0bdbca), fontWeight: FontWeight.bold)),
               ],
             ),
           ]),
